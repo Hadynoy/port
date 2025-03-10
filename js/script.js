@@ -32,7 +32,7 @@ for (let i = 0; i < totalNavList; i++) {
 }
 function removeBackSection() {
   for (let i = 0; i < totalSection; i++) {
-    allSection[i].classList.remove("bacl-section");
+    allSection[i].classList.remove("back-section");
   }
 }
 function showSection(element) {
@@ -65,7 +65,41 @@ navTogglerBtn.addEventListener("click", () => {
 function asideSectionTogglerBtn() {
   aside.classList.toggle("open");
   navTogglerBtn.classList.toggle("open");
-  for (let i = 0; 1 < totalSection; i++) {
+  for (let i = 0; i < totalSection; i++) {
     allSection[i].classList.toggle("open");
   }
 }
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector(".nav li a").classList.add("active"); 
+  document.querySelector(".section").classList.add("active"); 
+});
+
+function sendMail(event){
+  event.preventDefault(); // Prevents the form from submitting automatically
+
+  let name = document.getElementById("name").value.trim();
+  let email = document.getElementById("email").value.trim();
+  let subject = document.getElementById("subject").value.trim();
+  let message = document.getElementById("message").value.trim();
+
+  if (!name || !email || !subject || !message) {
+    alert("Please fill in all fields before submitting.");
+    return; // Stops the function if any field is empty
+  }
+
+  let parms = { name, email, subject, message };
+
+  emailjs.send("service_v8mw1si", "template_rze9rqh", parms)
+    .then(() => {
+      alert("Email sent successfully!");
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("subject").value = "";
+      document.getElementById("message").value = "";
+    })
+    .catch((error) => {
+      alert("Something went wrong. Please try again.");
+      console.error("EmailJS Error: ", error);
+    });
+}
+

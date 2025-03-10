@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Adinoy's Portfolio</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/skins/color-1.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -15,12 +15,23 @@
   <link rel="stylesheet" href="css/skins/color-4.css" class="alternate-style" title="color-4" disabled>
   <link rel="stylesheet" href="css/skins/color-5.css" class="alternate-style" title="color-5" disabled>
   <link rel="stylesheet" href="css/style-switcher.css">
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "aCwgI4IIKUzPOXyEE",
+      });
+   })();
+  </script>
 
 </head>
 
 <body>
   <!-- Main Container Start -->
   <div class="main-container">
+    
     <!-- Aside Start -->
     <div class="aside">
       <div class="logo">
@@ -42,7 +53,7 @@
     <div class="main-content">
 
       <!-- Home Section Start -->
-      <section class="home section" id="home">
+      <section class="home section active" id="home">
         <div class="container">
           <div class="row">
             <div class="home-info padd-15">
@@ -52,7 +63,7 @@
                 applications. My expertise is
                 in developing robust and user-friendly web applications using a variety of programming languages and
                 frameworks.</p>
-              <a href="#" class="btn">Download CV</a>
+              <a href="cv.html" class="btn">Download CV</a>
             </div>
             <div class="home-img padd-15">
               <img src="images/IMG_1910.jpg" alt="Home Image">
@@ -456,37 +467,37 @@
           <h4 class="contact-sub-title padd-15">I'M VERY RESPONSIVE TO MESSSAGES</h4>
           <!-- ===Conatct Form==== -->
           <div class="row">
-            <div class="contact-form padd-15">
-              <div class="row">
+            <div class="contact-form padd-15" >
+              <div class="row" >
                 <div class="form-item col-6 padd-15">
                   <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Name">
+                    <input type="text" id="name" class="form-control" placeholder="Name" required>
                   </div>
                 </div>
                 <div class="form-item col-6 padd-15">
                   <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Email ">
+                    <input type="email" id="email" class="form-control" placeholder="Email" required>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="form-item col-12 padd-15">
                   <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Subject">
+                    <input type="text" id="subject" class="form-control" placeholder="Subject" required>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="form-item col-12 padd-15">
                   <div class="form-group">
-                    <textarea name="" class="form-control" id="" placeholder="message"></textarea>
+                    <textarea name="" class="form-control" id="message" placeholder="Message" required></textarea>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="form-item col-12 padd-15">
-                  <button type="submit" class="btn">Send Message</button>
-                </div>
+                  <button type="submit" onclick="sendMail(event)" class="btn">Send Message</button>
+                </div> 
               </div>
             </div>
           </div>
@@ -524,6 +535,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="js/script.js"></script>
   <script src="js/style-switcher.js"></script>
+  
 </body>
 
 </html>

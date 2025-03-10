@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onubaiye Adinoy - CV</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f0f4f8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .container:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+    h1 {
+      color: #A67C00;
+      font-size: 38px;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    h2 {
+      color: #A67C00;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      border-bottom: 3px solid #A67C00;
+      padding-bottom: 5px;
+    }
+    p {
+      color: #444;
+      line-height: 1.8;
+    }
+    ul, ol {
+      padding-left: 20px;
+      margin-top: 10px;
+      color: #333;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: 1px solid #A67C00;
+      border-radius: 10px;
+      font-size: 14px;
+      outline: none;
+      transition: box-shadow 0.3s;
+    }
+    textarea:focus, input:focus {
+      box-shadow: 0 0 5px rgba(166, 124, 0, 0.5);
+    }
+    input[type="submit"] {
+      background-color: #A67C00;
+      color: white;
+      cursor: pointer;
+      border: none;
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+    input[type="submit"]:hover {
+      background-color: #856300;
+    }
+    .download-btn {
+      margin-top: 20px;
+      background-color: #A67C00;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .download-btn:hover {
+      background-color: #856300;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" id="cv">
+    <h1>Onubaiye Adinoy</h1>
+    <p><strong>Email:</strong> bigmoerell@gmail.com</p>
+    <p><strong>Phone:</strong> 08098986274</p>
+    <p><strong>Address:</strong> 156 Herbert Macaulay Road</p>
+
+    <h2>Profile</h2>
+    <p>A motivated and skilled professional with expertise in web development and a passion for creating user-friendly applications.</p>
+
+    <h2>Experience</h2>
+    <h4>Frontend Developer - GoMyCode (2024 - 2030)</h4>
+    <ul>
+      <li>Designed and developed user interfaces for web applications.</li>
+      <li>Collaborated with backend developers to integrate APIs.</li>
+      <li>Optimized applications for performance and scalability.</li>
+    </ul>
+
+    <h2>Education</h2>
+    <p><strong>Bachelor of Management in Accounting</strong></p>
+    <p>University of Lagos (2019 - 2024)</p>
+
+    <h2>Skills</h2>
+    <ol>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>React</li>
+    </ol>
+
+    <h2>Hobbies</h2>
+    <ul>
+      <li>Jesus</li>
+      <li>Music</li>
+      <li>Coding</li>
+    </ul>
+
+    <h2>Feedback</h2>
+    <textarea placeholder="I'm open to your feedback"></textarea>
+    <input type="submit" value="Submit Feedback">
+    <br>
+    <button class="download-btn" onclick="downloadPDF()">Download CV as PDF</button>
+  </div>
+
+  <script>
+    function downloadPDF() {
+      const element = document.getElementById('cv');
+      html2pdf().from(element).save();
+    }
+  </script>
+</body>
+
+</html>
